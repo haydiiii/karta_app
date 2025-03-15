@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:karta_app/core/function/routing.dart';
 import 'package:karta_app/core/utils/colors.dart';
 import 'package:karta_app/core/utils/text_style.dart';
+import 'package:karta_app/features/balance/widgets/pay_view.dart';
 
 class BalanceView extends StatefulWidget {
   const BalanceView({super.key});
@@ -114,7 +116,9 @@ class _BalanceViewState extends State<BalanceView> {
                 const SizedBox(height: 10),
 
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    pushWithReplacement(context, PayView());
+                  },
                   child: Text(
                     "Add Balance",
                     style: TextStyle(

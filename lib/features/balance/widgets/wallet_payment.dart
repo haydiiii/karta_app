@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:karta_app/core/function/routing.dart';
 import 'package:karta_app/core/utils/colors.dart';
 import 'package:karta_app/core/utils/text_style.dart';
 import 'package:karta_app/core/widgets/custom_modal_bottom_sheet.dart';
+import 'package:karta_app/features/balance/widgets/receipt_widget.dart';
+import 'package:karta_app/features/bottom_nav_bar/bottom_nav_bar.dart';
 
 class WalletPayment extends StatelessWidget {
   const WalletPayment({super.key});
@@ -17,7 +20,9 @@ class WalletPayment extends StatelessWidget {
             Icons.arrow_back_ios_new,
             size: 30,
           ),
-          onPressed: () {},
+          onPressed: () {
+            pushAndRemoveUntil(context, BottomNavBar());
+          },
         ),
       ),
       body: Center(
@@ -46,6 +51,9 @@ class WalletPayment extends StatelessWidget {
                       ],
                     ),
                   );
+                  Future.delayed(Duration(seconds: 3), () {
+                    pushWithReplacement(context, ReceiptView());
+                  });
                 },
                 child: Image.asset(
                   'assets/images/mobile_payment.png',

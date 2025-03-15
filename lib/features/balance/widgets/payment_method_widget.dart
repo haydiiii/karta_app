@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:karta_app/core/function/routing.dart';
 import 'package:karta_app/core/utils/colors.dart';
 import 'package:karta_app/core/utils/text_style.dart';
 import 'package:karta_app/core/widgets/custom_button_widget.dart';
 import 'package:karta_app/core/widgets/show_dialog_widget.dart';
+import 'package:karta_app/features/bottom_nav_bar/bottom_nav_bar.dart';
 
 class PaymentMethodWidget extends StatefulWidget {
   const PaymentMethodWidget({super.key});
@@ -25,7 +27,9 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
             Icons.arrow_back_ios_new,
             size: 30,
           ),
-          onPressed: () {},
+          onPressed: () {
+            pushAndRemoveUntil(context, BottomNavBar());
+          },
         ),
       ),
       body: SingleChildScrollView(
@@ -160,47 +164,48 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                     SizedBox(width: 10),
 
                     // Dropdown for Card Selection
-                    Material(
-                      borderRadius: BorderRadius.circular(20),
-                      elevation: 5,
-                      child: Container(
-                        width: 200,
-                        height: 79,
-                        padding: EdgeInsets.symmetric(horizontal: 10),
-                        decoration: BoxDecoration(
-                          color: Colors.grey[200],
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Icon(Icons.arrow_drop_down_outlined, size: 40),
-                            Text(
-                              '***0666',
-                              style: jumheriaTextStyle(),
-                            ),
-                          ],
+                    GestureDetector(
+                      onTap: () {
+                        showErrorDialog(
+                          context,
+                          "payment failed , please try again",
+                          textSize: 33,
+                          actionButton: CustomButton(
+                            text: 'OK',
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                        );
+                      },
+                      child: Material(
+                        borderRadius: BorderRadius.circular(20),
+                        elevation: 5,
+                        child: Container(
+                          width: 200,
+                          height: 79,
+                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          decoration: BoxDecoration(
+                            color: Colors.grey[200],
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Icon(Icons.arrow_drop_down_outlined, size: 40),
+                              Text(
+                                '***0666',
+                                style: jumheriaTextStyle(),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ],
                 ),
                 SizedBox(height: 66),
-                CustomButton(
-                    text: 'pay',
-                    onPressed: () {
-                      showErrorDialog(
-                        context,
-                        "payment failed , please try again",
-                        textSize: 33,
-                        actionButton: CustomButton(
-                          text: 'OK',
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                        ),
-                      );
-                    })
+                CustomButton(text: 'pay', onPressed: () {})
               ],
             ),
           ),

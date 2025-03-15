@@ -15,7 +15,9 @@ class ReceiptView extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
         title: Text("Receipt", style: jumheriaTextStyle()),
         backgroundColor: Colors.transparent,
