@@ -42,3 +42,20 @@ TextStyle getSmallStyle(
     color: color ?? AppColors.greyColor,
   );
 }
+
+TextStyle getStyle1({Color? color, FontWeight? fontWeight, double? fontsize}) {
+  return TextStyle(
+      color: color ?? AppColors.greyColor,
+      fontSize: 24,
+      fontWeight: FontWeight.w700,
+      fontFamily: 'Poppins');
+}
+
+TextStyle jumheriaTextStyle(
+    {Color? color, FontWeight? fontWeight, double? fontsize}) {
+  return TextStyle(
+      fontSize:fontsize?? 48,
+      fontWeight: FontWeight.w400,
+      color: color ??Colors.black,
+      fontFamily: 'Jomhuria');
+}
