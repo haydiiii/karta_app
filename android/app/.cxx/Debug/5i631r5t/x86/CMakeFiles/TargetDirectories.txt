@@ -1,0 +1,2 @@
+G:/flutter/sho8'l/karta_app/android/app/.cxx/Debug/5i631r5t/x86/CMakeFiles/edit_cache.dir
+G:/flutter/sho8'l/karta_app/android/app/.cxx/Debug/5i631r5t/x86/CMakeFiles/rebuild_cache.dir
