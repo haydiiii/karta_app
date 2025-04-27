@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:karta_app/features/admin/auth/login_screen.dart';
+import 'package:karta_app/features/admin/home/home_screen.dart';
+import 'package:karta_app/features/admin/home/user_screen.dart';
 
 import 'package:karta_app/features/bottom_nav_bar/bottom_nav_bar.dart';
 
@@ -14,7 +16,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: WelcomeScreen(),
     );
   }
 }

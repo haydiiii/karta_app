@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:karta_app/core/function/routing.dart';
 import 'package:karta_app/core/utils/colors.dart';
 import 'package:karta_app/core/widgets/custom_button_widget.dart';
+import 'package:karta_app/features/admin/home/home_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -87,7 +89,7 @@ class LoginScreen extends StatelessWidget {
                     CustomButton(
                       text: "Log in",
                       onPressed: () {
-                        
+                        pushWithReplacement(context, WelcomeScreen());
                         if (_formKey.currentState!.validate()) {
                           print("Valid data. Proceed to login.");
                         }

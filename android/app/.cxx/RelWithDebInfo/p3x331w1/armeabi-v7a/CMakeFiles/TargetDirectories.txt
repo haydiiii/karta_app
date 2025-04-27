@@ -1,0 +1,2 @@
+G:/flutter/sho8'l/karta_app/android/app/.cxx/RelWithDebInfo/p3x331w1/armeabi-v7a/CMakeFiles/edit_cache.dir
+G:/flutter/sho8'l/karta_app/android/app/.cxx/RelWithDebInfo/p3x331w1/armeabi-v7a/CMakeFiles/rebuild_cache.dir
